@@ -3,7 +3,7 @@
     <ul>
       <li v-for="(toDo, index) in todos" :key="index">
         {{ toDo }}
-        <RemoveToDo v-on:todo-removed="handleTodoRemoved(props)" />
+        <RemoveToDo v-on:todo-removed="handleTodoRemoved(index)" />
       </li>
     </ul>
     <input type="text" v-model="newTodo" placeholder="Add a new ToDo" />
