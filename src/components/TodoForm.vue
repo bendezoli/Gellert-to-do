@@ -14,13 +14,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 import ClearAll from "../components/ClearAll.vue";
 import RemoveToDo from "../components/RemoveToDo.vue";
 import AddToDo from "../components/AddToDo.vue";
 
 const todos = ref<string[]>([]);
 const newTodo = ref("");
+
+// const props = defineProps<{
+//   index: number;
+// }>();
+
+// a 31-es sorban megadjuk aaz index tipusat es kotelezove tesszuk
+
+const props = defineProps({
+  index: {
+    type: Number,
+    required: true,
+  },
+});
 
 function handleTodoRemoved(index: number) {
   todos.value.splice(index, 1);

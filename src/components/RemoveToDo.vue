@@ -3,13 +3,16 @@
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits(["todo-removed"]);
+// const emit = defineEmits(["todo-removed"]);
+
+
+// ez az uj kod amikor megadodik a tipusa a string altal
+const emit = defineEmits<{
+  "todo-removed": [value: string]; // named tuple syntax
+}>();
 
 function removeTodo() {
-  emit("todo-removed");
+  emit("todo-removed", "delete-one-item");
 }
 </script>
-<style scoped>
-/* ide irod a stylet,
- azert scoped mert csak erre a komponensre ervenyes */
-</style>
+<style scoped></style>
