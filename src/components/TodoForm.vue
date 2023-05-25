@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from "vue";
+import { defineProps } from "vue";
 import ClearAll from "../components/ClearAll.vue";
 import RemoveToDo from "../components/RemoveToDo.vue";
 import AddToDo from "../components/AddToDo.vue";
